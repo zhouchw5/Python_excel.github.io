@@ -10,10 +10,13 @@ Zhou Mr. Chuwei
          
 ## Scientific Python Development Environment               
 I strongly recommend that we should download the open source environment of Python, the Anaconda Navigator, which contains more than one hundred installed toolkits in Python, like numpy, pandas, os, etc.       
-![anaconda]()              
+![anaconda](https://github.com/zhouchw5/Python_excel.github.io/blob/master/anaconda.png)              
 _Spyder is a powerful integrated development environment with advanced editing, interactive testing, debugging and introspection features._          
           
-          
+------------------------           
+             
+## Actual Cases           
+
 
 
 
