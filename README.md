@@ -16,7 +16,8 @@ _Spyder is a powerful integrated development environment with advanced editing, 
 ------------------------           
              
 ## Actual Cases           
-
+_First part for some important modules we should import before programming, like os, pandas as pd, numpy as np, and datetime._         
+The os in my programme is mainly used to join selected files to the defined project path. 
 
 
 
