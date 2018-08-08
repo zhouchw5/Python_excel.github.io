@@ -18,7 +18,8 @@ _Spyder is a powerful integrated development environment with advanced editing, 
 ## Actual Cases           
 _First part for some important modules we should import before programming, like os, pandas as pd, numpy as np, and datetime._         
 - The os in my programme is mainly used to join selected files to the defined project path.                
-- The numpy is mainly used for the data selection and analysis. 
+- The numpy is mainly used for the data selection and analysis.        
+- We would also import Workbook from openpyxl and import dataframe_to_rows from openpyxl.utils.dataframe. 
 
 
 
