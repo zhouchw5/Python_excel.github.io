@@ -35,6 +35,8 @@ def read_excel(proj_folder_path, file_name, sheetname):
     return table          
 test_01 = read_excel(proj_folder, 'test_file', 'test_sheet')         
 ```       
+The coding above is my customary option to read an xlsx. file with defining a function read_excel, via using the module pandas. Other methods like importing the module xlrd could also be used to grab the data in an xlsx. file.           
+
 
 
 
