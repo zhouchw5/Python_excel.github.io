@@ -50,7 +50,7 @@ where we have added a new file named test_02 to our proj_folder, with the select
 ### Basic Operations with Data         
 After building up the bi directional bridge between Python and Excel, some basic operations can be introduced to the process with data exploring in Python before they go back to their unit lattices in xlsx.files.                
             
-One of the elemental assignments in supply chain management is the demand/supply match. In this process, three main variables in report are Items, Amount and Date Time.                   
+One of the elemental assignments in supply chain management is the demand/supply match. In this process, three main variables in report are Items, Amount and Date Time. Items would be divided into raw-materials, different levels of semi-products and products. The systematic BOM (bill of materials) would store all these related data and integrate different levels of items in actual analytics cases. For simplicity of the discussion,                   
 
 
 
