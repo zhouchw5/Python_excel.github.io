@@ -45,7 +45,16 @@ for r in dataframe_to_rows(test_dataframe, index = False, header = True):
     wy.append(r)
 wx.save(r'D:\Drivers\python_test\test_02.xlsx')      
 ```           
-where we have added a new file named test_02 to our proj_folder, with the selected data from file test_01 writen in. 
+where we have added a new file named test_02 to our proj_folder, with the selected data from file test_01 writen in. We can also use the xlwt or the xlsxwriter as our operation engine to achieve similar functions.        
+             
+### Basic Operations with Data         
+After building up the bi directional bridge between Python and Excel, some basic operations can be introduced to the process with data exploring in Python before they go back to their unit lattices in xlsx.files.                
+            
+One of the elemental assignments in supply chain management is the demand/supply match. In this process, three main variables in report are Items, Amount and Date Time.                   
+
+
+
+
 
 
 
