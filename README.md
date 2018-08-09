@@ -23,14 +23,25 @@ _First part for some important modules we should import before programming, like
 - The os in my programme is mainly used to join selected files to the defined project path.                
 - The numpy is mainly used for the data selection and analysis.        
 - We would also import Workbook from openpyxl and import dataframe_to_rows from openpyxl.utils.dataframe. The right mix of pandas module and openpyxl help interact with xlsx. files via the transmission of data effectively.                
+         
+### Interface With Excel        
+_Here's the convenience to interaction with Excel files via Python, which is also the fundamental bridge to remove data from Excel for further computing in Python._                   
+``` python         
+proj_folder = r'D:\Drivers\python_test'
+def read_excel(proj_folder_path, file_name, sheetname):
+    current_file = os.path.join(proj_folder_path, file_name)
+    table = pd.read_excel(current_file, sheet_name = sheetname)
+    table.columns = map(str.lower, table.columns)
+    return table          
+test_01 = read_excel(proj_folder, 'test_file', 'test_sheet')         
+```       
 
 
 
 
 
 
-``` python        
-hello world
 
-```
+
+
 
