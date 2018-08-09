@@ -35,7 +35,17 @@ def read_excel(proj_folder_path, file_name, sheetname):
     return table          
 test_01 = read_excel(proj_folder, 'test_file', 'test_sheet')         
 ```       
-The coding above is my customary option to read an xlsx. file with defining a function read_excel, via using the module pandas. Other methods like importing the module xlrd could also be used to grab the data in an xlsx. file.           
+The coding above is my customary option to read an xlsx. file with defining a function read_excel, via using the module pandas. Other methods like importing the module xlrd could also be used to grab the data in an xlsx. file.        
+From a converse perspective, the coding below would show us how to build up a new xlsx. file and write in our selected data:         
+``` python         
+test_dataframe = pd.DataFrame(test_01)
+wx = Workbook()
+wy = wx.create_sheet("test_sheet_output", 0)
+for r in dataframe_to_rows(test_dataframe, index = False, header = True):
+    wy.append(r)
+wx.save(r'D:\Drivers\python_test\test_02.xlsx')      
+```           
+where we have added a new file named test_02 to our proj_folder, with the selected data from file test_01 writen in. 
 
 
 
