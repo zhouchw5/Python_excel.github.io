@@ -54,7 +54,7 @@ One of the elemental assignments in supply chain management is the demand/supply
           
 Thus in terms of parent items, three main variables (Items, Amount, Date Time) can be simplified as:          
 ![parentitemsforecast](https://github.com/zhouchw5/Python_excel.github.io/blob/master/parentitemforecast.png)          
-_In actual cases, in terms of the index 'demand_type', other main tabs than 'forecast' should be 'order', 'supplier_response', 'forecast_gap', etc. 'Forecast' represents the future demand data of an item, which is based on the analysis of the past outbound data by using some statistics model and _                 
+_In actual cases, in terms of the index 'demand_type', other main tabs than 'forecast' should be 'order', 'supplier_response', 'forecast_gap', etc. 'Forecast' represents the future demand data of an item, which is based on the analysis of the historical outbound data by using some statistics model and the right mix of the major projects information collected by front-line colleagues._                 
 Thus a basic technique is to 
 
 
