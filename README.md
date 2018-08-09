@@ -53,7 +53,9 @@ After building up the bi directional bridge between Python and Excel, some basic
 One of the elemental assignments in supply chain management is the demand/supply match. In this process, three main variables in report are Items, Amount and Date Time. Items would be divided into raw-materials, different levels of semi-products and products. The systematic BOM (bill of materials) would store all these related data and integrate different levels of items in actual analytics cases. For simplicity of the discussion, we can compress the BOM into two levels: parent items and son items, with the collocation ratio between both of which. You can imagine a fictitious black box containing all levels of semi-products and their sophisticated relation. The two objects in the two edges of the black box are parent items and son items. Thus in this article we just take the simplified model to discuss some basic usages of Python to our working scenarios, with no need to open the black box.          
           
 Thus in terms of parent items, three main variables (Items, Amount, Date Time) can be simplified as:          
-![parentitemsforecast]()
+![parentitemsforecast](https://github.com/zhouchw5/Python_excel.github.io/blob/master/parentitemforecast.png)          
+_In actual cases, in terms of the index ''
+
 
 
 
