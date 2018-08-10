@@ -99,8 +99,17 @@ def read_fcst(proj_folder_path, file_name, sheetname):
     
     demand_fcst = demand_fcst.groupby(['parent_item', 'lg_wk'], as_index = False)['qty'].sum()
     demand_fcst['lg_wk'] = demand_fcst['lg_wk'].str[:10]  
-    return demand_fcst
+    return demand_fcst       
+    
+fcst_df = read_fcst(proj_folder, 'overview.xlsx', 'TYPICAL CONFIGURATION FORECAST')
 ```        
+We define a new function named read_fcst, selecting the forecast data of each parent item within the time bucket from a table like figure 2. in an xlsx. file and melting the data into the columns form with the identification variable 'parent_item', variable name 'lg_wk' and the name of value 'qty', as shown below.           
+![columnsformofforecastdata](https://github.com/zhouchw5/Python_excel.github.io/blob/master/columnsform_forecastdata.jpg)          
+_Figure 3. The forecast data melted in columns_          
+        
+        
+    
+
 
 
 
