@@ -1,4 +1,4 @@
-# Some Basic Usages of Python in My Daily work           
+# Some Basic Usages of Python in My Daily work_(I)           
 - **Still with my original insistence, your footprint in my website would not be marked or stored. I always wish a zero intersection with me after your reading, nothing but some interesting memory merely in your mind, no storage for the Like or reader amount. Your ever presence is enough.**             
 
 
@@ -105,7 +105,12 @@ fcst_df = read_fcst(proj_folder, 'overview.xlsx', 'TYPICAL CONFIGURATION FORECAS
 ```        
 We define a new function named read_fcst, selecting the forecast data of each parent item within the time bucket from a table like figure 2. in an xlsx. file and melting the data into the columns form with the identification variable 'parent_item', variable name 'lg_wk' and the name of value 'qty', as shown below.           
 ![columnsformofforecastdata](https://github.com/zhouchw5/Python_excel.github.io/blob/master/columnsformofforecastdata.png)          
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _Figure 3. The forecast data melted in columns_        
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _Figure 3. The forecast data melted in columns_           
+                   
+                   
+### Summary          
+So far we have obtained the capabilities to build up the bi directional bridge between Excel and Python. We can also read the data from xlsx. files and melt them into columns form, which is more generally used because no matter for visulization in tools like Tableau Desktop or for some operations in Excel like sumifs, vlookup functions, we all have to edit the data into columns form firstly.          
+
         
         
     
