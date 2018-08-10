@@ -71,7 +71,36 @@ def read_fcst(proj_folder_path, file_name, sheetname):
     
     if 'demand_type' in fcst.columns:
         f_type_col = 'demand_type'      
+    elif 'Data Measures' in fcst.columns:
+        f_type_col = 'Data Measures'
+    else:
+        raise ValueError("Error: the model cannot find the measure.")
     
+    fcst = fcst[fcst[f_type_col] == 'forecast']
+    if 'item' in fcst.columns:
+        fcst.rename(columns = {'item':'parent_item'}, inplace = True)
+    elif 'ITEM' in fcst.columns:
+        fcst.rename(columns = {'ITEM':'parent_item'}, inplace = True)
+    else:
+        raise ValueError("Error: the 'parent_item' does not exist.")
+        
+    all_timebucket = []
+    for col in fcst.columns:
+         if col.startswith('20') & (col >= start_wk) & ( col <= end_wk):
+               all_timebucket.append(col)        
+
+    all_timebucket.sort()
+    keep_cols = all_timebucket[:13]
+    keep_cols.append('parent_item')
+    fcst = fcst[keep_cols]
+    
+    demand_fcst = pd.melt(fcst, id_vars = ['parent_item'],  var_name = 'lg_wk', value_name = 'qty')
+    demand_fcst['qty'] = demand_fcst['qty'].fillna(0) 
+    
+    demand_fcst = demand_fcst.groupby(['parent_item', 'lg_wk'], as_index = False)['qty'].sum()
+    demand_fcst['lg_wk'] = demand_fcst['lg_wk'].str[:10]  
+    return demand_fcst
+```        
 
 
 
