@@ -54,8 +54,15 @@ One of the elemental assignments in supply chain management is the demand/supply
           
 Thus in terms of parent items, three main variables (Items, Amount, Date Time) can be simplified as:          
 ![parentitemsforecast](https://github.com/zhouchw5/Python_excel.github.io/blob/master/parentitemforecast.png)          
-_In actual cases, in terms of the index 'demand_type', other main tabs than 'forecast' should be 'order', 'supplier_response', 'forecast_gap', etc. 'Forecast' represents the future demand data of an item, which is based on the analysis of the historical outbound data by using some statistics model and the right mix of the major projects information collected by front-line colleagues._                 
-Thus a basic technique is to 
+_In actual cases, in terms of the index 'demand_type', other main tabs than 'forecast' should be 'order', 'supplier_response', 'forecast_gap', etc. 'Forecast' represents the future demand data of an item, which is based on the analysis of the historical outbound data by using some statistics models and the right mix of the major projects information collected by front-line colleagues._                        
+Thus a basic technique is to collect the data of items, within the selected index and the time interval under considering. Generally we would consider the time interval lasting 13 weeks (equal to one season/three months) since the starting week.           
+``` python      
+start_wk = '2018-05-21'           
+end_wk = datetime.timedelta(weeks = 13) + datetime.datetime.strptime(start_wk, "%Y-%m-%d")        
+end_wk = str(end_wk)[:10]       
+```         
+We utilize the str function to obtain the alphabetic string form of 'end_wk', the datatime.datetime object, with the length of 10 characters we need. If we use the datetime.datetime.object directly in our subsequent coding, some bugs would come out because the datetime.datetime object has no attribute for some functions like 'startwith' or 'str'.           
+
 
 
 
