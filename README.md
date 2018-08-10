@@ -14,7 +14,7 @@ Zhou Mr. Chuwei
 ## Scientific Python Development Environment               
 I strongly recommend that we should download the open source environment of Python, the Anaconda Navigator, which contains more than one hundred installed toolkits in Python, like numpy, pandas, os, etc.       
 ![anaconda](https://github.com/zhouchw5/Python_excel.github.io/blob/master/anaconda.png)              
-_Spyder is a powerful integrated development environment with advanced editing, interactive testing, debugging and introspection features._          
+_Figure 1. Spyder is a powerful integrated development environment with advanced editing, interactive testing, debugging and introspection features._          
           
 ------------------------           
              
@@ -54,14 +54,24 @@ One of the elemental assignments in supply chain management is the demand/supply
           
 Thus in terms of parent items, three main variables (Items, Amount, Date Time) can be simplified as:          
 ![parentitemsforecast](https://github.com/zhouchw5/Python_excel.github.io/blob/master/parentitemforecast.png)          
-_In actual cases, in terms of the index 'demand_type', other main tabs than 'forecast' should be 'order', 'supplier_response', 'forecast_gap', etc. 'Forecast' represents the future demand data of an item, which is based on the analysis of the historical outbound data by using some statistics models and the right mix of the major projects information collected by front-line colleagues._                        
+_**Figure 2.** In actual cases, in terms of the index 'demand_type', other main tabs than 'forecast' should be 'order', 'supplier_response', 'forecast_gap', etc. 'Forecast' represents the future demand data of an item, which is based on the analysis of the historical outbound data by using some statistics models and the right mix of the major projects information collected by front-line colleagues._                        
 Thus a basic technique is to collect the data of items, within the selected index and the time interval under considering. Generally we would consider the time interval lasting 13 weeks (equal to one season/three months) since the starting week.           
 ``` python      
 start_wk = '2018-05-21'           
 end_wk = datetime.timedelta(weeks = 13) + datetime.datetime.strptime(start_wk, "%Y-%m-%d")        
 end_wk = str(end_wk)[:10]       
 ```         
-We utilize the str function to obtain the alphabetic string form of 'end_wk', the datatime.datetime object, with the length of 10 characters we need. If we use the datetime.datetime.object directly in our subsequent coding, some bugs would come out because the datetime.datetime object has no attribute for some functions like 'startwith' or 'str'.           
+We utilize the str function to obtain the alphabetic string form of 'end_wk', the datatime.datetime object, with the length of 10 characters we need. If we use the datetime.datetime.object directly in our subsequent coding, some bugs would come out because the datetime.datetime object has no attribute for some functions like 'startwith' or 'str'.                  
+         
+``` python         
+def read_fcst(proj_folder_path, file_name, sheetname):
+    current_file = os.path.join(proj_folder_path, 'test//20180521', file_name)
+    fcst = pd.read_excel(current_file, sheet_name = sheetname)
+    fcst.columns = fcst.columns.map(str)        
+    
+    if 'demand_type' in fcst.columns:
+        f_type_col = 'demand_type'      
+    
 
 
 
