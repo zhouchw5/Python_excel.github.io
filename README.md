@@ -6,7 +6,6 @@
 In the letter _Some Basic Usages of Python in My Daily Work (I)_, we have known how Python could exchange information with an xlsx. file and some preliminary operations to edit data performed in Python. Based on these preliminary operations and some extended coding knowledge shown in this article, I would develop a simple and skeleton model to perform the decision-making process and obtain an elementary demand/supply match report.        
             
 Yours,            
-
 Zhou Mr.Chuwei            
 2018.08.10
 
