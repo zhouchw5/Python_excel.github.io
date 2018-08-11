@@ -11,5 +11,6 @@ Zhou Mr.Chuwei
 
 ------------------------------           
             
-            
+## Bridge Adjoining the Parent Items and Son Items              
+Our working calendar had three lines: the planning line, the ordering line and the implementing line. 
            
