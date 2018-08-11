@@ -110,7 +110,8 @@ We define a new function named read_fcst, selecting the forecast data of each pa
                    
 ### Summary          
 So far we have obtained the capabilities to build up the bi directional bridge between Excel and Python. We can also read the data from xlsx. files and melt them into columns form, which is more generally used because no matter for visulization in tools like Tableau Desktop or for some operations in Excel like sumifs, vlookup functions, we all have to edit the data into columns form firstly. Considering the length and readability of the article, I think the first part should be ended here and I would write the next chapter asap. Thanks for your time.     
-     
+        
+        
 Best Regards!       
 
 
