@@ -12,7 +12,7 @@ Zhou Mr.Chuwei
 ------------------------------           
             
 ## Bridge connecting the Parent Items and Son Items              
-Our working calendar had three lines: the planning line, the ordering line and the implementing line. The planning line and the ordering line are the activating source of the whole operating process.       
+Our working calendar had three lines: the planning line, the ordering line and the implementing line. The planning line and the ordering line are the activating source of the whole operating process. In actual case, planning objects would be determined in different levels of semi-products or raw materials. Different patterns of resource planning depend on the weight of forecast data or order data to         
           
               
 
