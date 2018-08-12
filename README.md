@@ -21,7 +21,7 @@ Different patterns of resource planning depend on the weights of forecast data o
         
         
 **_Bridge Connecting the Parent Items And Son Items_**            
-In the edition (I), we have imagined a black box containing all levels of semi-products to   
+In the edition (I), we have imagined a black box containing all levels of semi-products to compress the 'medium' between parent items and son items. The black box is the simplified introduction with the forecast information of parent items (planning objects) to son items (raw materials).     
     
 
 
