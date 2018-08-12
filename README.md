@@ -11,8 +11,8 @@ Zhou Mr.Chuwei
 
 ------------------------------           
             
-## Bridge Adjoining the Parent Items and Son Items              
-Our working calendar had three lines: the planning line, the ordering line and the implementing line. The planning line and the ordering line are the activating source of the whole operating process.      
+## Bridge connecting the Parent Items and Son Items              
+Our working calendar had three lines: the planning line, the ordering line and the implementing line. The planning line and the ordering line are the activating source of the whole operating process.       
           
               
 
