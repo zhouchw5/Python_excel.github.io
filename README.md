@@ -21,7 +21,10 @@ Different patterns of resource planning depend on the weights of forecast data o
         
         
 **_Bridge Connecting the Parent Items And Son Items_**            
-In the edition (I), we have imagined a black box containing all levels of semi-products to compress the 'medium' between parent items and son items. The black box is the simplified introduction in positive-direction with the forecast information of parent items (planning objects) to son items (raw materials). As we have mentioned in _Working Network_, besides the activation in positive-direction from the forecast data of parent items, We also need a reversed process from the supply information of son items       
+In the edition (I), we have imagined a black box containing all levels of semi-products to compress the 'medium' between parent items and son items. The black box is the simplified introduction in positive-direction with the forecast information of parent items (planning objects) to son items (raw materials). As we have mentioned in _Working Network_, besides the activation in positive-direction from the forecast data of parent items, We also need a reversed process from the supply information of son items to develop the implementing plan of Quotation Items, which is a sophisticated procedure considering the supply of materials and the manufacturing progress of all levels of semi-products. Again for simplicity in this letter, we should imagine a white box compressing all this complexity into a basic model using the Cannikin Law.               
+              
+**_Allocations Management_**          
+
     
 
 
