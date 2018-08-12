@@ -12,7 +12,12 @@ Zhou Mr.Chuwei
 ------------------------------           
             
 ## Bridge connecting the Parent Items and Son Items              
-Our working calendar had three lines: the planning line, the ordering line and the implementing line. The planning line and the ordering line are the activating source of the whole operating process. In actual case, planning objects would be determined in different levels of semi-products or raw materials. Different patterns of resource planning depend on the weights of forecast data or order data to activate the operations as the source of demand, like the pull pattern 100% from forecast data and the push pattern 100% from order data. Though in actual cases we are often oriented by the outcomes from the hedging between forecast and order, with the right mix of the pull and push patterns, I only discuss the pull pattern in this article with the activation from forecast data which we have red via Python in the (I) edition.                 
+Our working calendar had three lines: the planning line, the ordering line and the implementing line. The planning line and the ordering line are the activating source of the whole operating process. In actual case, planning objects would be determined in different levels of semi-products or raw materials. Different patterns of resource planning depend on the weights of forecast data or order data to activate the operations as the source of demand, like the pull pattern 100% from forecast data and the push pattern 100% from order data. Though in actual cases we are often oriented by the outcomes from the hedging between forecast and order, with the right mix of the pull and push patterns, I only discuss the pull pattern in this article with the activation from forecast data of parent items which we have red via Python in the (I) edition. And simply these parent items would also acts as the planning objects in our description here.               
+            
+As the activating engine of our working schedule, the planning line and the ordering line are the estimated labels in the front line like the navigation lighthouse. 
+
+
+## The supply Data of Son Items
           
               
 
