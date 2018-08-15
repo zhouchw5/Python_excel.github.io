@@ -24,19 +24,13 @@ Different patterns of resource planning depend on the weights of forecast data o
 In the edition (I), we have imagined a black box containing all levels of semi-products to compress the 'medium' between parent items and son items. The black box is the simplified introduction in positive-direction with the forecast information of parent items (planning objects) to son items (raw materials). As we have mentioned in _Working Network_, besides the activation in positive-direction from the forecast data of parent items, We also need a reversed process from the supply information of son items to develop the implementing plan of Quotation Items, which is a sophisticated procedure considering the supply of materials and the manufacturing progress of all levels of semi-products. Again for simplicity in this letter, we should imagine a white box compressing all this complexity into a basic model using the Cannikin Law, which would determine the a parent item's supply schedule based on the supply capability of all its son items. Before using the Cannikin Law, the white box has also built another path of the opposite direction,  determining the weights of a son item's supply to transfer to all its parent items. After the white box finishes its bi directional assignments, we can obtain the final implementing sales plan of Quotation Items and achieve a close loop in our working network.        
           
           
-              
-**_Allocations Management_**          
-As we have mentioned above, we would utilise the 
-    
+## Connecting the Planning Line of Parent Items to the Supply of Son Items        
+As the activating engine of our working schedule, the planning line and the ordering line are the estimated labels in front line like the navigation lighthouse.              
 
-
-
-
-
-## Bridge Connecting the Parent Items And Son Items              
+      
                
             
-As the activating engine of our working schedule, the planning line and the ordering line are the estimated labels in front line like the navigation lighthouse. 
+
 
 
 ## The Supply Data of Son Items           
