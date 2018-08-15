@@ -42,7 +42,15 @@ def read_p2s_ratio(proj_folder_path, file_name):
           
 With the ratio data between parent items and son items, we can define a function to integrate the total demand of a son item from all its parent items' data.            
 ``` python      
-
+def fcst_no06_2sitem_df(fcst_no_06_df, p2s_dim_df):       
+    fcst_parent_ratio_son = fcst_no_06_df.merge(p2s_dim_df, on = ['parent_item'], how = 'left')
+    fcst_parent_ratio_son = fcst_parent_ratio_son[fcst_parent_ratio_son['son_item'].notnull()]
+    exception_pitem_set = set(fcst_parent_ratio_son[~fcst_parent_ratio_son['son_item'].notnull()]['parent_item']) 
+    if (len(exception_pitem_set))>0:
+       fcst_parent_ratio_son['s_qty'] = fcst_parent_ratio_son ['qty']* fcst_parent_ratio_son ['p_qty']
+       fcst_parent_ratio_son = fcst_parent_ratio_son[['son_item', 'parent_item', 'lg_wk', 's_qty']]
+    return fcst_parent_ratio_son   
+```
 
       
                
