@@ -39,6 +39,9 @@ def read_p2s_ratio(proj_folder_path, file_name):
     p2s_dim_df = df[['parent_item', 'son_item', 'p_qty']]
     return p2s_dim_df   
 ```       
+          
+With the ratio data between parent items and son items, we can define a function to integrate the total demand of a son item from all its parent items' data.            
+``` python      
 
 
       
