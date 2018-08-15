@@ -51,7 +51,8 @@ def fcst_no06_2sitem_df(fcst_no_06_df, p2s_dim_df):
        fcst_parent_ratio_son = fcst_parent_ratio_son[['son_item', 'parent_item', 'lg_wk', 's_qty']]
     return fcst_parent_ratio_son   
 ```
-
+         
+Then based on the demand data converged to each son item, we would come to some puzzles like: can the supply of a son item fulfillment all the demand? How to arrange the supply schedule to control the inventory if satisfying the demand? How to manage the allocations and achieve the best level of fulfillment if son items' supply is not enough?               
       
                
             
