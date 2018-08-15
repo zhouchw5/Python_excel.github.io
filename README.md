@@ -27,7 +27,18 @@ In the edition (I), we have imagined a black box containing all levels of semi-p
 ## Connecting the Planning Line of Parent Items to the Supply of Son Items        
 As the activating engine of our working schedule, the planning line and the ordering line are the estimated labels in front line like the navigation lighthouse. The navigation lighthouse has been lighted up in last letter (_Some basic usages of Python in My Daily Work (I)_) where we have introduced how to read the forecast data of parent items via Python. Then we would introduce the simplified BOM (bill of materials) to translate the forecast data of parent items into the demand of son items.               
 ![BOM](https://github.com/zhouchw5/Python_excel.github.io/blob/Python/BOM.jpg)                
-_Here's the bridge connecting parent items and son items, where the column 'P_QTY' represents the ratio of a parent item to a son item. For example, one parent item 02311VDU would be configured with 12 son items labelled in 06210444._         
+_Here's the bridge connecting parent items and son items, where the column 'P_QTY' represents the ratio of a parent item to a son item. For example, one parent item 02311VDU would be configured with 12 son items labelled in 06210444._               
+           
+We can define a function to read the connection shown above:            
+``` python     
+def read_p2s_ratio(proj_folder_path, file_name):     
+    p2s_file = os.path.join(proj_folder_path, 'data\data_model', file_name)    
+    df = pd.read_excel(p2s_file, sheet_name = 'BOM')
+    df.columns = map(str.lower, df.columns)      
+    df.rename(columns = {'SON_ITEM':'son_item', 'PARENT_ITEM':'parent_item', 'P_QTY':'p_qty'}, inplace = True)
+    p2s_dim_df = df[['parent_item', 'son_item', 'p_qty']]
+    return p2s_dim_df   
+```       
 
 
       
