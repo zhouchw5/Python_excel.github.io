@@ -33,7 +33,11 @@ As the activating engine of our working schedule, the planning line and the orde
 
 
 
-## The Supply Data of Son Items           
+## Allocations Management of Son Items         
+
+      
+## Implementing Supply Plan of Parent Items and Demand/Supply Match of Son Items           
+
        
        
           
