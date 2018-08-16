@@ -94,7 +94,11 @@ def read_in_supply(proj_folder_path, file_name, sheetname):
     supply_df['lg_wk'] = supply_df['lg_wk'].str[:10]
     return supply_df
 ```
-
+       
+Simply we just consider the supply data of two son items, a fictitious sample of supply data can be shown as below:          
+![supply of son items](https://github.com/zhouchw5/Python_excel.github.io/blob/Python/supply%20of%20son%20items.png)           
+          
+          
                
             
 
