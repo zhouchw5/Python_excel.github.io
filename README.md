@@ -54,10 +54,47 @@ def fcst_no06_2sitem_df(fcst_no_06_df, p2s_dim_df):
          
 Then based on the demand data converged to each son item, we would come to some puzzles like: can the supply of a son item fulfill all the demand? How to arrange the supply schedule to control the inventory if satisfying the demand? How to manage the allocations and achieve the best level of fulfillment if son items' supply is not enough? Thus the bridge extended from the demand of parent items above still retain another half to be completed. This half should be started from the supply of son items.        
             
-            
+A function similar to the _read_fcst_ can be defined to grab the supply data:       
+
 ``` python        
-def 
-      
+def read_in_supply(proj_folder_path, file_name, sheetname):    
+    current_file = os.path.join(proj_folder_path, 'test\\20180521', file_name)
+    df = pd.read_excel(current_file, sheet_name = sheetname)
+    df.columns = df.columns.map(str)       
+ 
+    if 'demand_type'in df.columns:
+       s_type_col = 'demand_type'
+    elif 'Data Measures' in df.columns:
+       s_type_col = 'Data Measures'    
+    else:
+       raise ValueError("Error: the model cannot find the measure.")
+    
+    df = df[df[s_type_col]=='supplier_response']
+    if 'Customer Item' in df.columns:
+        df.rename(columns={'Customer Item':'son_item'}, inplace = True)
+    elif 'SON_ITEM' in df.columns:
+        df.rename(columns={'SON_ITEM':'son_item'}, inplace = True)
+    else:
+        raise ValueError("Error: the 'son_item' does not exist.")
+
+    all_timebucket = []
+    for col in df.columns:
+        if col.startswith('20')&(col>=start_wk)&(col<=end_wk):
+               all_timebucket.append(col)
+
+    all_timebucket.sort()
+    keep_cols = all_timebucket[:13]
+    keep_cols.append('son_item')
+    df = df[keep_cols]
+    
+    supply_df = pd.melt(df, id_vars = ['son_item'], var_name = 'lg_wk', value_name = 's_amount')
+    supply_df['s_amount'] = supply_df['s_amount'].fillna(0)
+
+    supply_df = supply_df.groupby(['son_item', 'lg_wk'], as_index = False)['s_amount'].sum()
+    supply_df['lg_wk'] = supply_df['lg_wk'].str[:10]
+    return supply_df
+```
+
                
             
 
