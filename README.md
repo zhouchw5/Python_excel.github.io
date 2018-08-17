@@ -27,7 +27,7 @@ In the edition (I), we have imagined a black box containing all levels of semi-p
 ## Connecting the Planning Line of Parent Items to the Supply of Son Items        
 As the activating engine of our working schedule, the planning line and the ordering line are the estimated labels in front line like the navigation lighthouse. The navigation lighthouse has been lighted up in last letter (_Some basic usages of Python in My Daily Work (I)_) where we have introduced how to read the forecast data of parent items via Python. Then we would introduce the simplified BOM (bill of materials) to translate the forecast data of parent items into the demand of son items.               
 ![BOM](https://github.com/zhouchw5/Python_excel.github.io/blob/Python/BOM.jpg)                
-_Here's the bridge connecting parent items and son items, where the column 'P_QTY' represents the ratio of a parent item to a son item. For example, one parent item 02311VDU would be configured with 12 son items labelled in 06210444._               
+**Table 1.** _Here's the bridge connecting parent items and son items, where the column 'P_QTY' represents the ratio of a parent item to a son item. For example, one parent item 02311VDU would be configured with 12 son items labelled in 06210444._               
            
 We can define a function to read the connection shown above:            
 ``` python     
