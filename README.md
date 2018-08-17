@@ -138,7 +138,8 @@ def atp_order(fcst_no_06_df, p2s_dim_df, supply_df):
 ```
          
 In terms of the input objects of this function atp_order(_fcst_no_06_df_, _p2s_dim_df_, _supply_df_), _fcst_no_06_df_ is the forecast data we red in last letter, _p2s_dim_df_ is the ratio relation between parent items and son items in Table 1, and _supply_df_ is the supply data in Table 2.                
-
+          
+Currently we have reached the intersection point of parent items' planning line and the supply of son items. After the preliminary allocations of son items' supply, we obtain some alternative available quantities of parent items, as shown in column L in Table 3.               
 
 
 
