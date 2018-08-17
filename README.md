@@ -102,8 +102,12 @@ Simply we just consider the supply data of two son items, a fictitious sample of
 Similar to the forecast data in the opposite edge of our working network, the supply data would also be melt into columns form by the function above for subsequent computing.        
            
 An intersection point between the foracast and supply has gradually rised to the surface, which should be one of the white box's six surfaces. As we have mentioned previously, we would skip over all the complexity in the white box and choose a simple and feasible way to manage the allocations of son items' supply. Before coding we would firstly show a table describing the allocations process. Actually in some typical projects, parent items are complete machines like servers and storages. And son items are some critical components of complete machines like the HDD (Hard Disk Driver), CPU, SSD (Solid State Driver) and memory. In this letter we just take HDD and memory for examples illustration.                
-![allocations management](https://github.com/zhouchw5/Python_excel.github.io/blob/Python/allocations%20management.png)             
-<a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>
+![allocations management](https://github.com/zhouchw5/Python_excel.github.io/blob/Python/allocations%20management.png)        
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**Table 3.**_The allocations management_            
+<a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>The ratios are merged from table 1.      
+<a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>The quantity in F columns is the forecast data of parent items we have red in _Some basic Usages of Python in My Daily Work (I)_.            
+
+
 
 
        
