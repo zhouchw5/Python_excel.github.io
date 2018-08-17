@@ -120,20 +120,20 @@ def atp_order(fcst_no_06_df, p2s_dim_df, supply_df):
     fcst_parent_son = fcst_no06_2sitem_df(fcst_no_06_df, p2s_dim_df)
     fcst_parent_son_sumup = fcst_parent_son.groupby(['son_item', 'lg_wk'], as_index = False)['s_qty'].sum()
     fcst_parent_son_sumup.rename(columns={'s_qty':'sum_qty'}, inplace = True)
-    fcst_parent_son _distribution = fcst_parent_son.merge(fcst_parent_son_sumup, on =['son_item', 'lg_wk'], how = 'left')
-    fcst_parent_son _distribution['discrimination'] = np.where(fcst_parent_son _distribution['sum_qty'] == 0,0,1)
-    fcst_parent_son _distribution_01 = fcst_parent_son _distribution[fcst_parent_son _distribution['discrimination']==1].copy()
-    fcst_parent_son _distribution_01['rate']= fcst_parent_son _distribution_01['s_qty']/ fcst_parent_son _distribution_01['sum_qty']
-    fcst_parent_son _distribution_00 = fcst_parent_son _distribution[fcst_parent_son _distribution['discrimination']==0].copy()
-    fcst_parent_son _distribution_00['rate'] = 0
-    frames = [fcst_parent_son _distribution_01, fcst_parent_son _distribution_00]
+    fcst_parent_son_distribution = fcst_parent_son.merge(fcst_parent_son_sumup, on =['son_item', 'lg_wk'], how = 'left')
+    fcst_parent_son_distribution['discrimination'] = np.where(fcst_parent_son_distribution['sum_qty'] == 0,0,1)
+    fcst_parent_son_distribution_01 = fcst_parent_son_distribution[fcst_parent_son_distribution['discrimination']==1].copy()
+    fcst_parent_son_distribution_01['rate']= fcst_parent_son_distribution_01['s_qty']/ fcst_parent_son_distribution_01['sum_qty']
+    fcst_parent_son_distribution_00 = fcst_parent_son_distribution[fcst_parent_son_distribution['discrimination']==0].copy()
+    fcst_parent_son_distribution_00['rate'] = 0
+    frames = [fcst_parent_son_distribution_01, fcst_parent_son_distribution_00]
     fcst_parent_son_weight = pd.concat(frames)
     fcst_parent_son_weight_supply = fcst_parent_son_weight.merge(supply_df, on =['son_item', 'lg_wk'], how='left')
-    fcst_parent_son_weight_supply['sub_atp'] = fcst_parent_son_weight_supply ['rate'] * fcst_parent_son_weight_supply['s_amount']
+    fcst_parent_son_weight_supply['sub_atp'] = fcst_parent_son_weight_supply['rate'] * fcst_parent_son_weight_supply['s_amount']
     fcst_parent_son_weight_supply_ratio = fcst_parent_son_weight_supply.merge(p2s_dim_df, on =['son_item', 'parent_item'], how = 'left')
-    fcst_parent_son_weight_supply_ratio['AI_atp']= fcst_parent_son_weight_supply_ratio['sub_atp']/      
-    fcst_parent_son_weight_supply_ratio['p_qty']
-    demand_order_df = fcst_parent_son_weight_supply_ratio [['parent_item','lg_wk','AI_atp']]
+    fcst_parent_son_weight_supply_ratio['AI_atp']= 
+    fcst_parent_son_weight_supply_ratio['sub_atp']/fcst_parent_son_weight_supply_ratio['p_qty']
+    demand_order_df = fcst_parent_son_weight_supply_ratio[['parent_item','lg_wk','AI_atp']]
     return demand_order_df
 ```
 
