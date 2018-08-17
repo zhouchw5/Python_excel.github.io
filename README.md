@@ -96,7 +96,9 @@ def read_in_supply(proj_folder_path, file_name, sheetname):
 ```
        
 Simply we just consider the supply data of two son items, a fictitious sample of supply data can be shown as below:          
-![supply of son items](https://github.com/zhouchw5/Python_excel.github.io/blob/Python/supply%20of%20son%20items.png)           
+![supply of son items](https://github.com/zhouchw5/Python_excel.github.io/blob/Python/supply%20of%20son%20items.png) 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **Table 2.**_The supply data of son items_          
+
 Similar to the forecast data in the opposite edge of our working network, the supply data would also be melt into columns form by the function above for subsequent computing.        
            
 An intersection point between the foracast and supply has gradually rised to the surface, which should be one of the white box's six surfaces. As we have mentioned previously, we would skip over all the complexity in the white box and choose a simple and feasible way to manage the allocations of son items' supply. Before coding we would firstly show a table describing the allocations process. Actually in some typical projects, parent items are complete machines like servers and storages. And son items are some critical components of complete machines like the HDD (Hard Disk Driver), CPU, SSD (Solid State Driver) and memory. In this letter we just take HDD and memory for examples illustration.                
