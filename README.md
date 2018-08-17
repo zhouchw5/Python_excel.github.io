@@ -113,7 +113,11 @@ An intersection point between the foracast and supply has gradually rised to the
 <a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _The sub_atp in K column is the product when J column is multiplied by I column.        
 <a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _The AI_qty in L column is the quotient when the sub_atp in K column is divided by the p_qty in D column. Thus the AI_qty is the available supply data of a parent item and we have taken the accuracy to the integral part._          
         
-        
+           
+To finish the allocating and computing process in _Table 3_, attached with the defined function _fcst_no06_2sitem_df_ and _read_in_supply_, we need another function to compute the weights and allocate the supply sources.            
+``` python
+
+```
 
 
 
@@ -124,7 +128,6 @@ An intersection point between the foracast and supply has gradually rised to the
                
             
 
-. 
 
 ## Allocations Management of Son Items         
 
