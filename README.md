@@ -97,7 +97,7 @@ def read_in_supply(proj_folder_path, file_name, sheetname):
        
 Simply we just consider the supply data of two son items, a fictitious sample of supply data can be shown as below:          
 ![supply of son items](https://github.com/zhouchw5/Python_excel.github.io/blob/Python/supply%20of%20son%20items.png) 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **Table 2.**_The supply data of son items_          
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**Table 2.**_The supply data of son items_          
 
 Similar to the forecast data in the opposite edge of our working network, the supply data would also be melt into columns form by the function above for subsequent computing.        
            
