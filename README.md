@@ -110,13 +110,31 @@ An intersection point between the foracast and supply has gradually rised to the
 <a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _And one sum_qty in H columns can be obtained by summing up the s_qty related to the same son item, like H2 = H3 = H4 = 3396 = G2+G3+G4._          
 <a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _And the rate in I column, determining the weights of supply source allocated to different parent items, is the quotient when sum_qty in H column is divided by s_qty in G column._          
 <a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _The s_amount in J column is the supply data of the son_item from Table 2._             
-<a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _The sub_atp in K column is the product when J column is multiplied by I column.        
+<a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _The sub_atp in K column is the product when J column is multiplied by I column._        
 <a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _The AI_qty in L column is the quotient when the sub_atp in K column is divided by the p_qty in D column. Thus the AI_qty is the available supply data of a parent item and we have taken the accuracy to the integral part._          
         
            
 To finish the allocating and computing process in _Table 3_, attached with the defined function _fcst_no06_2sitem_df_ and _read_in_supply_, we need another function to compute the weights and allocate the supply sources.            
 ``` python
-
+def atp_order(fcst_no_06_df, p2s_dim_df, supply_df):
+    fcst_parent_son = fcst_no06_2sitem_df(fcst_no_06_df, p2s_dim_df)
+    fcst_parent_son_sumup = fcst_parent_son.groupby(['son_item', 'lg_wk'], as_index = False)['s_qty'].sum()
+    fcst_parent_son_sumup.rename(columns={'s_qty':'sum_qty'}, inplace = True)
+    fcst_parent_son _distribution = fcst_parent_son.merge(fcst_parent_son_sumup, on =['son_item', 'lg_wk'], how = 'left')
+    fcst_parent_son _distribution['discrimination'] = np.where(fcst_parent_son _distribution['sum_qty'] == 0,0,1)
+    fcst_parent_son _distribution_01 = fcst_parent_son _distribution[fcst_parent_son _distribution['discrimination']==1].copy()
+    fcst_parent_son _distribution_01['rate']= fcst_parent_son _distribution_01['s_qty']/ fcst_parent_son _distribution_01['sum_qty']
+    fcst_parent_son _distribution_00 = fcst_parent_son _distribution[fcst_parent_son _distribution['discrimination']==0].copy()
+    fcst_parent_son _distribution_00['rate'] = 0
+    frames = [fcst_parent_son _distribution_01, fcst_parent_son _distribution_00]
+    fcst_parent_son_weight = pd.concat(frames)
+    fcst_parent_son_weight_supply = fcst_parent_son_weight.merge(supply_df, on =['son_item', 'lg_wk'], how='left')
+    fcst_parent_son_weight_supply['sub_atp'] = fcst_parent_son_weight_supply ['rate'] * fcst_parent_son_weight_supply['s_amount']
+    fcst_parent_son_weight_supply_ratio = fcst_parent_son_weight_supply.merge(p2s_dim_df, on =['son_item', 'parent_item'], how = 'left')
+    fcst_parent_son_weight_supply_ratio['AI_atp']= fcst_parent_son_weight_supply_ratio['sub_atp']/      
+    fcst_parent_son_weight_supply_ratio['p_qty']
+    demand_order_df = fcst_parent_son_weight_supply_ratio [['parent_item','lg_wk','AI_atp']]
+    return demand_order_df
 ```
 
 
