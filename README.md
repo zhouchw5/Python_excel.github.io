@@ -136,7 +136,8 @@ def atp_order(fcst_no_06_df, p2s_dim_df, supply_df):
     demand_order_df = fcst_parent_son_weight_supply_ratio[['parent_item','lg_wk','AI_atp']]
     return demand_order_df
 ```
-
+         
+In terms of the input objects of this function atp_order(_fcst_no_06_df_, _p2s_dim_df_, _supply_df_), _fcst_no_06_df_ is the forecast data we red in last letter, the           
 
 
 
