@@ -109,7 +109,11 @@ An intersection point between the foracast and supply has gradually rised to the
 <a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _The s_qty in G columns can be obtained by multiplying the D and F columns._        
 <a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _And one sum_qty in H columns can be obtained by summing up the s_qty related to the same son item, like H2 = H3 = H4 = 3396 = G2+G3+G4._          
 <a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _And the rate in I column, determining the weights of supply source allocated to different parent items, is the quotient when sum_qty in H column is divided by s_qty in G column._          
-<a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _The s_amount in J column is the supply data 
+<a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _The s_amount in J column is the supply data of the son_item from Table 2._             
+<a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _The sub_atp in K column is the product when J column is multiplied by I column.        
+<a href="https://www.codecogs.com/eqnedit.php?latex=$&space;\clubsuit&space;$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$&space;\clubsuit&space;$" title="$ \clubsuit $" /></a>. _The AI_qty in L column is the quotient when the sub_atp in K column is divided by the p_qty in D column. Thus the AI_qty is the available supply data of a parent item and we have taken the accuracy to the integral part._          
+        
+        
 
 
 
@@ -120,7 +124,7 @@ An intersection point between the foracast and supply has gradually rised to the
                
             
 
-
+. 
 
 ## Allocations Management of Son Items         
 
