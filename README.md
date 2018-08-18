@@ -141,9 +141,16 @@ In terms of the input objects of this function atp_order(_fcst_no_06_df_, _p2s_d
           
 Currently we have reached the intersection point of parent items' planning line and the supply of son items. After the preliminary allocations of son items' supply, we obtain some alternative available quantities of parent items, as shown in column L in Table 3. And then we should define a function named atp_order_all using the Cannikin Law to compute the final available quantity of each parent item.        
 ``` python
-
+def atp_order_all(fcst_no_06_df, demand_order_hdd, demand_order_cpu, demand_order_memory, demand_order_ssd):
+    fcst_no_06_df.rename(columns={'qty':'AI_qtp'}, inplace = True)
+    frames = [demand_order_hdd, demand_order_cpu, demand_order_memory, demand_order_ssd, fcst_no_06_df]
+    demand_order_all = pd.concat(frames)
+    demand_order_all = demand_order_all.groupby(['parent_item', 'lg_wk'], as_index = False)['AI_atp'].min()
+    fcst_no_06_df.rename(columns={'AI_atp':'qty'}, inplace = True)
+    return demand_order_all
 ```
-
+          
+          
 
 
        
