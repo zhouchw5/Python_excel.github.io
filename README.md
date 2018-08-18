@@ -140,7 +140,7 @@ def atp_order(fcst_no_06_df, p2s_dim_df, supply_df):
          
 In terms of the input objects of this function atp_order(_fcst_no_06_df_, _p2s_dim_df_, _supply_df_), _fcst_no_06_df_ is the forecast data we red in last letter, _p2s_dim_df_ is the ratio relation between parent items and son items in Table 1, and _supply_df_ is the supply data in Table 2.                
           
-## Implementing Supply Plan of Parent Items and Demand/Supply Match of Son Items         
+## Implementing Supply Plan of Parent Items        
 
 Currently we have reached the intersection point of parent items' planning line and the supply of son items. After the preliminary allocations of son items' supply, we obtain some alternative available quantities of parent items, as shown in column L in Table 3. And then we should define a function named atp_order_all using the Cannikin Law to compute the final available quantity of each parent item.        
 ``` python
@@ -157,7 +157,9 @@ The process performed in the coding above can be figured in the table shown belo
 ![available quantity of parent items](https://github.com/zhouchw5/Python_excel.github.io/blob/Python/available%20quantity%20of%20parent%20items.png)             
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**Table 4.** _The available quantity of each parent item based on the Cannikin Law_                     
           
-As shown in table 4, the available quantity of one parent item would be the suggested implementing sales order quantity of this item, which is the outcome of the simplified process in the white box we have mentioned above. According to the formula: _demand_order_all = demand_order_all.groupby(['parent_item', 'lg_wk'], as_index = False)['AI_atp'].min()_, the sales order quantity here is always less than the forecast quantity. And based on the Cannikin Law in order for delivery in full, we can always avoid shortage of any components but redundancy would become the point of significance.                     
+As shown in table 4, the available quantity of one parent item would be the suggested implementing sales order quantity of this item, which is the outcome of the simplified process in the white box we have mentioned above. According to the formula: _demand_order_all = demand_order_all.groupby(['parent_item', 'lg_wk'], as_index = False)['AI_atp'].min()_, the sales order quantity here is always less than the forecast quantity. And based on the Cannikin Law in order for delivery in full, we can always avoid shortage of any components but redundancy would become the point of significance. So the next design of the model is to consume the redundant supply of son items to obtain more available quantity of parent items via iteration.       
+           
+           
           
 
 
