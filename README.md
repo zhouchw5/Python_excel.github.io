@@ -155,7 +155,9 @@ def atp_order_all(fcst_no_06_df, demand_order_hdd, demand_order_cpu, demand_orde
          
 The process performed in the coding above can be figured in the table shown below:         
 ![available quantity of parent items](https://github.com/zhouchw5/Python_excel.github.io/blob/Python/available%20quantity%20of%20parent%20items.png)             
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**Table 4.** _The available quantity of each parent item based on the Cannikin Law
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**Table 4.** _The available quantity of each parent item based on the Cannikin Law              
+          
+          
           
 
 
