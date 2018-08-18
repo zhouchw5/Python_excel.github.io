@@ -3,7 +3,7 @@
         
 - **Still with my original insistence, your footprint in my website would not be marked or stored. I always wish a zero intersection with me after your reading, nothing but some interesting memory merely in your mind, no storage for the Like or reader amount. Your ever presence is enough.**           
 
-In the letter _Some Basic Usages of Python in My Daily Work (I)_, we have known how Python could exchange information with an xlsx. file and some preliminary operations to edit data performed in Python. Based on these preliminary operations and some extended coding knowledge shown in this article, I would develop a simple and skeleton model to perform the decision-making process and obtain an elementary demand/supply match report.        
+In the letter _Some Basic Usages of Python in My Daily Work (I)_, we have known how Python could exchange information with an xlsx. file and some preliminary operations to edit data performed in Python. Based on these preliminary operations and some extended coding knowledge shown in this article, I would develop a simple and skeleton model to perform the decision-making process in working schedule and obtain an elementary demand/supply match report.        
             
 Yours,            
 Zhou Mr.Chuwei            
@@ -159,7 +159,7 @@ The process performed in the coding above can be figured in the table shown belo
           
 As shown in table 4, the available quantity of one parent item would be the suggested implementing sales order quantity of this item, which is the outcome of the simplified process in the white box we have mentioned above. According to the formula: _demand_order_all = demand_order_all.groupby(['parent_item', 'lg_wk'], as_index = False)['AI_atp'].min()_, the sales order quantity here is always less than the forecast quantity. And based on the Cannikin Law in order for delivery in full, we can always avoid shortage of any components but redundancy would become the point of significance. So the next design of the model is to consume the redundant supply of son items to obtain more available quantity of parent items via iteration.       
            
-           
+For the subsequent iteration process, just another extra story, I would introduce it in another letter. Till now we have achieved a simplified closed loop in our working network, oriented by the forecast data of parent items in the planning line, interacting with the supply data of son items in the intersection point, concluding the committed sales order quantity of each parent item in the implementing line. But                   
           
 
 
