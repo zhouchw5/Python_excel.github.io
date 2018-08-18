@@ -51,7 +51,8 @@ def fcst_no06_2sitem_df(fcst_no_06_df, p2s_dim_df):
        fcst_parent_ratio_son = fcst_parent_ratio_son[['son_item', 'parent_item', 'lg_wk', 's_qty']]
     return fcst_parent_ratio_son   
 ```
-         
+           
+## Allocations Management of Son Items           
 Then based on the demand data converged to each son item, we would come to some puzzles like: can the supply of a son item fulfill all the demand? How to arrange the supply schedule to control the inventory if satisfying the demand? How to manage the allocations and achieve the best level of fulfillment if son items' supply is not enough? Thus the bridge extended from the demand of parent items above still retain another half to be completed. This half should be started from the supply of son items.        
             
 A function similar to the _read_fcst_ can be defined to grab the supply data:       
@@ -139,6 +140,8 @@ def atp_order(fcst_no_06_df, p2s_dim_df, supply_df):
          
 In terms of the input objects of this function atp_order(_fcst_no_06_df_, _p2s_dim_df_, _supply_df_), _fcst_no_06_df_ is the forecast data we red in last letter, _p2s_dim_df_ is the ratio relation between parent items and son items in Table 1, and _supply_df_ is the supply data in Table 2.                
           
+## Implementing Supply Plan of Parent Items and Demand/Supply Match of Son Items         
+
 Currently we have reached the intersection point of parent items' planning line and the supply of son items. After the preliminary allocations of son items' supply, we obtain some alternative available quantities of parent items, as shown in column L in Table 3. And then we should define a function named atp_order_all using the Cannikin Law to compute the final available quantity of each parent item.        
 ``` python
 def atp_order_all(fcst_no_06_df, demand_order_hdd, demand_order_cpu, demand_order_memory, demand_order_ssd):
@@ -149,7 +152,9 @@ def atp_order_all(fcst_no_06_df, demand_order_hdd, demand_order_cpu, demand_orde
     fcst_no_06_df.rename(columns={'AI_atp':'qty'}, inplace = True)
     return demand_order_all
 ```
-          
+         
+The process performed in the coding above can be figured in the table shown below:         
+![available quantity of parent items]()
           
 
 
@@ -160,10 +165,8 @@ def atp_order_all(fcst_no_06_df, demand_order_hdd, demand_order_cpu, demand_orde
             
 
 
-## Allocations Management of Son Items         
-
       
-## Implementing Supply Plan of Parent Items and Demand/Supply Match of Son Items           
+           
 
        
        
