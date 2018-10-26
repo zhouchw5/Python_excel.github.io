@@ -1,7 +1,7 @@
 # Some Basic Usages of Python in My Daily Work_(II)         
         
         
-- **Still with my original insistence, your footprint in my website would not be marked or stored. I always wish a zero intersection with me after your reading, nothing but some interesting memory merely in your mind, no storage for the Like or reader amount. Your ever presence is enough.**           
+- **For the information security issue, the specific data and objects are both fictitious in my letter, rather than the information in our practicality. And the coding that I have shown below is also the most fundamental part of my framework for the secrecy maintenance. Besides, my purpose here is to programme a simple example as a brief introduction to my main working modules and their inner connection on the whole. Thus I think the iceberg beyond the water surface is enough.**           
 
 In the letter _Some Basic Usages of Python in My Daily Work (I)_, we have known how Python could exchange information with an xlsx. file and some preliminary operations to edit data performed in Python. Based on these preliminary operations and some extended coding knowledge shown in this article, I would develop a simple and skeleton model to perform the decision-making process in working schedule and obtain an elementary demand/supply match report.        
             
